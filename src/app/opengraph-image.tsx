@@ -228,7 +228,7 @@ export default async function Image() {
               fontFamily: "monospace",
             }}
           >
-            resq.vercel.app
+            resqid.vercel.app
           </div>
         </div>
       </div>

@@ -5,7 +5,7 @@ import { AuthProvider } from "@/components/providers/auth-provider";
 import { Toaster } from "@/components/ui/sonner";
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_APP_URL || "https://resq.vercel.app",
+    process.env.NEXT_PUBLIC_APP_URL || "https://resqid.vercel.app",
   ),
   title: {
     default: "ResQ — Biometric Face Search & Lead Verification",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://resq.vercel.app",
+    url: "https://resqid.vercel.app",
     siteName: "ResQ",
     title: "ResQ — Biometric Face Search & Lead Verification",
     description:

@@ -74,7 +74,7 @@ NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=sb_publishable_uN-i671xFsf8Nn9NVzzfyQ_yLyrN
 NEXT_PUBLIC_MODEL_API_URL=https://resqbackend-t1wv.onrender.com
 
 # Canonical Application URL
-NEXT_PUBLIC_APP_URL=https://resq.vercel.app
+NEXT_PUBLIC_APP_URL=https://resqid.vercel.app
 ```
 
 ---
@@ -91,7 +91,7 @@ NEXT_PUBLIC_APP_URL=https://resq.vercel.app
 4. Deploy!
 5. In your **Supabase Dashboard** → **Authentication** → **URL Configuration** → **Redirect URLs**, add:
    ```text
-   https://<your-vercel-domain>.vercel.app/auth/callback
+   https://resqid.vercel.app/auth/callback
    ```
 
 ---
