@@ -1,0 +1,75 @@
+.analysis { display: grid; gap: 18px; min-width: 0; container: videoAnalysis / inline-size; }
+.analysis > * { min-width: 0; }
+.fileHeader { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; }
+.fileIcon { flex-shrink: 0; display: grid; place-items: center; width: 42px; height: 44px; border-radius: 10px; border: 1px solid #453453; background: #271c363d; color: #c2a3ef; }
+.fileHeader > div:first-of-type { flex: 1; min-width: 150px; }
+.fileHeader strong { display: block; font-size: 13px; font-weight: 500; overflow-wrap: anywhere; line-height: 1.6; }
+.fileHeader small { display: block; color: #898392; font-size: 10px; margin-top: 2px; }
+.fileActions { display: flex; flex-wrap: wrap; gap: 6px; }
+.fileActions button, .playerFooter button { display: flex; align-items: center; justify-content: center; gap: 6px; min-height: 36px; padding: 7px 10px; font-size: 11px; color: #b7afc5; border: 1px solid #393140; border-radius: 8px; background: #1c1822; }
+.fileActions button:hover, .playerFooter button:hover { background: #2b2138; color: #dac1ff; border-color: #6c4b8c; }
+.fileActions button:last-child { background: transparent; color: #8b8297; }
+.analysis button:disabled { opacity: .45; cursor: not-allowed; }
+.analysis button:focus-visible, .analysis summary:focus-visible { outline: 2px solid #b794f6; outline-offset: 3px; }
+.playerShell { border: 1px solid #312b3a; border-radius: 14px; background: #08080b; overflow: hidden; }
+.playerHeader { display: flex; justify-content: space-between; align-items: center; padding: 12px 14px; border-bottom: 1px solid #29242f; background: #15121a; }
+.playerHeader > span { display: flex; align-items: center; gap: 7px; color: #b8acc9; font-size: 11px; }
+.playerHeader > div { font-size: 9px; font-weight: 500; }
+.player { width: 100%; height: clamp(220px, 35vh, 360px); display: block; object-fit: contain; background: radial-gradient(ellipse, #241b3230, #09090b); }
+.playerFooter { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding: 9px 12px; border-top: 1px solid #27222d; }
+.playerFooter > span { font-size: 11px; font-variant-numeric: tabular-nums; color: #cdb8e7; }
+.playerFooter small { color: #796e89; }
+.playerFooter > div { display: flex; gap: 6px; }
+.playerFooter button { border: 0; background: #22192e80; }
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+.stats > div { background: #17141d; border: 1px solid #2d2736; border-radius: 10px; padding: 13px; min-width: 0; }
+.stats span { display: block; font-size: 10px; line-height: 1.5; color: #8f849f; }
+.stats strong { display: block; margin-top: 7px; font-size: 21px; font-weight: 500; letter-spacing: -.03em; color: #ddd3ed; font-variant-numeric: tabular-nums; }
+.stats small { font-size: 13px; color: #84728f; }
+.framesHeading { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding-top: 9px; }
+.framesHeading p { font-size: 9px; letter-spacing: .14em; color: #a28cb9; margin-bottom: 6px; }
+.framesHeading h3 { font-size: 19px; font-weight: 600; letter-spacing: -.025em; }
+.framesHeading h3 span { color: #a991be; font-size: 11px; background: #2b203a; padding: 2px 7px; border-radius: 5px; margin-left: 4px; }
+.framesHeading > span { color: #91839f; font-size: 11px; }
+.filters { display: flex; flex-wrap: wrap; gap: 6px; }
+.filters button { display: flex; align-items: center; gap: 8px; min-height: 36px; padding: 7px 10px; font-size: 11px; border: 1px solid #332a3c; border-radius: 8px; color: #92849f; background: #151119; }
+.filters button[aria-pressed=true] { border-color: #735296; color: #d9c3f1; background: #2a1b3c; }
+.filters button span { font-size: 9px; font-variant-numeric: tabular-nums; color: #b99acb; }
+.explanation { font-size: 11px; color: #83738f; line-height: 1.8; }
+.frameGrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 1fr)); gap: 12px; }
+.frameCard { display: flex; flex-direction: column; text-align: left; border: 1px solid #322a3c; border-radius: 12px; overflow: hidden; background: linear-gradient(140deg, #1b1622, #131016); transition: border-color .15s, box-shadow .15s; min-width: 0; }
+.frameCard:hover { border-color: #715487; }
+.frameCard[aria-pressed=true] { border-color: #b480e5; box-shadow: 0 0 0 1px #b480e545; }
+.frameImage { position: relative; display: grid; place-items: center; height: 136px; background: #09070c; border-bottom: 1px solid #2a2231; color: #786288; }
+.frameImage img { display: block; width: 100%; height: 136px; object-fit: contain; }
+.timestamp { position: absolute; bottom: 8px; left: 9px; border: 1px solid #ffffff15; border-radius: 5px; padding: 3px 6px; background: #08070cd9; color: #dbd1e8; font-size: 10px; font-variant-numeric: tabular-nums; }
+.selectedMark { position: absolute; top: 8px; right: 8px; display: grid; place-items: center; width: 24px; height: 24px; border-radius: 7px; color: #f4eafa; background: #8251b7; }
+.frameCopy { display: grid; gap: 10px; padding: 13px; }
+.frameCopy > div:first-child { font-size: 9px; font-weight: 500; width: fit-content; }
+.frameCopy strong { font-size: 12px; font-weight: 500; color: #c7b9d9; }
+.frameCopy > div:nth-last-child(2) { display: flex; justify-content: space-between; gap: 6px; padding-top: 9px; border-top: 1px solid #35273f; }
+.frameCopy > div:nth-last-child(2) span { font-size: 10px; color: #9d87ad; }
+.frameCopy b { font-weight: 500; font-size: 12px; color: #d7b9ed; font-variant-numeric: tabular-nums; }
+.frameCopy small { color: #8a759c; font-size: 10px; }
+.emptyFrames { display: flex; flex-direction: column; align-items: center; padding: 28px 16px; gap: 12px; border: 1px dashed #493454; border-radius: 12px; text-align: center; color: #b096c3; }
+.emptyFrames strong { font-size: 13px; font-weight: 500; }
+.emptyFrames p { color: #887192; font-size: 11px; line-height: 1.8; }
+.emptyFrames button { font-size: 12px; min-height: 36px; color: #c49ce4; }
+.frameDetail { padding: 16px; border: 1px solid #483453; border-radius: 12px; background: #24172e55; }
+.detailHeading { display: flex; align-items: center; flex-wrap: wrap; gap: 9px; }
+.detailHeading > span { color: #a58ab5; font-size: 11px; }
+.detailHeading strong { font-size: 12px; font-weight: 500; color: #d3b5e5; font-variant-numeric: tabular-nums; }
+.detailHeading > div { font-size: 9px; font-weight: 500; }
+.frameDetail > p { font-size: 12px; line-height: 1.8; color: #ae92bf; margin-top: 9px; }
+.frameDetail summary { cursor: pointer; font-size: 11px; color: #b397c8; margin-top: 12px; padding: 5px 0; }
+.faceDetails { display: grid; gap: 10px; margin-top: 10px; }
+.faceDetails > div { padding: 10px; border: 1px solid #493454; background: #170f20; border-radius: 8px; }
+.faceDetails > div > div { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 7px; font-size: 11px; color: #b38ec8; }
+.faceDetails strong { color: #d2b5e2; font-weight: 500; }
+.faceDetails p { color: #d6b383; font-size: 11px; line-height: 1.8; margin-top: 8px; }
+.faceDetails small { display: block; color: #8c719f; font-size: 10px; line-height: 1.8; margin-top: 7px; }
+.warning { display: flex; align-items: flex-start; gap: 8px; border: 1px solid #71513550; background: #503f2415; padding: 12px; border-radius: 10px; font-size: 11px; line-height: 1.8; color: #b79a71; }
+.warning svg { flex-shrink: 0; margin-top: 2px; }
+@container videoAnalysis (max-width: 520px) { .fileActions { width: 100%; } .fileActions button { flex: 1; min-height: 40px; } .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } .frameGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; } .frameCopy { padding: 11px; } .frameImage, .frameImage img { height: 120px; } }
+@container videoAnalysis (max-width: 330px) { .frameGrid { grid-template-columns: minmax(0, 1fr); } .frameImage, .frameImage img { height: 160px; } .filters button { flex: 1; justify-content: center; gap: 4px; padding-inline: 6px; font-size: 10px; } .fileActions button { font-size: 10px; padding-inline: 6px; } .playerFooter { justify-content: center; } .playerFooter > div { justify-content: center; width: 100%; } }
+@media (prefers-reduced-motion: reduce) { .frameCard { transition: none; } }

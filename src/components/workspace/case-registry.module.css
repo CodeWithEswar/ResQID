@@ -1,0 +1,251 @@
+.registry {
+  container: registry / inline-size;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 0;
+}
+.header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px 20px;
+}
+.eyebrow {
+  grid-column: 1 / -1;
+}
+.heading {
+  grid-column: 1;
+  grid-row: 2;
+  font-size: clamp(24px, 3vw, 36px);
+  min-width: 0;
+}
+.header[data-manage="false"] .heading {
+  grid-column: 1 / -1;
+}
+.headerAction {
+  grid-column: 2;
+  grid-row: 2;
+}
+.subtitle {
+  grid-column: 1 / -1;
+  grid-row: 3;
+  max-width: 660px;
+}
+.actionShort {
+  display: none;
+}
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+.stat {
+  min-width: 0;
+  text-align: left;
+  padding: 18px 20px;
+  border: 1px solid #ffffff0c;
+  border-radius: 14px;
+  background: linear-gradient(145deg, #17171d, #111115);
+  transition:
+    border-color 0.2s,
+    background 0.2s;
+}
+.stat:hover {
+  border-color: #a78bfa35;
+  background: #17151e;
+}
+.surface {
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid #ffffff0d;
+  background: #111115;
+  box-shadow: 0 8px 30px #00000012;
+}
+.toolbar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto 44px auto;
+  gap: 10px;
+  align-items: center;
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #a78bfa25;
+  border-radius: 7px;
+  padding: 6px 9px;
+  font-size: 11px;
+  background: #a78bfa08;
+  color: #c4b5fd;
+}
+.chip:hover {
+  background: #a78bfa15;
+}
+.tableContainer {
+  overflow-x: auto;
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table th {
+  background: #ffffff02;
+  padding: 15px 20px;
+  color: #737380;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: left;
+  border-bottom: 1px solid #ffffff06;
+}
+.table td {
+  padding: 17px 20px;
+  border-bottom: 1px solid #ffffff05;
+}
+.table tbody tr:last-child td {
+  border-bottom: 0;
+}
+.table tbody tr:hover {
+  background: #ffffff02;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
+  gap: 16px;
+}
+.card {
+  min-width: 0;
+  border: 1px solid #ffffff09;
+  border-radius: 14px;
+  background: linear-gradient(145deg, #18181e, #141418);
+  padding: 18px;
+  transition: border-color 0.2s;
+}
+.card:hover {
+  border-color: #a78bfa30;
+}
+.notes {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  min-height: 40px;
+  overflow-wrap: anywhere;
+}
+.compactList {
+  display: none;
+}
+.compactCard {
+  padding: 18px;
+  border-bottom: 1px solid #ffffff06;
+  min-width: 0;
+}
+.compactCard:last-child {
+  border-bottom: 0;
+}
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  border-top: 1px solid #ffffff06;
+  padding: 16px 20px;
+}
+.details {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px 16px;
+  border-block: 1px solid #ffffff06;
+  padding-block: 20px;
+}
+.details dt {
+  color: #71717a;
+  font-size: 10px;
+  margin-bottom: 6px;
+}
+.details dd {
+  color: #d4d4d8;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+@container registry (max-width: 800px) {
+  .table th,
+  .table td {
+    padding-inline: 14px;
+  }
+}
+@container registry (max-width: 700px) {
+  .stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .toolbar {
+    grid-template-columns: minmax(0, 1fr) 44px auto;
+  }
+  .toolbar > :first-child {
+    grid-column: 1 / -1;
+  }
+}
+@container registry (max-width: 520px) {
+  .actionFull {
+    display: none;
+  }
+  .actionShort {
+    display: inline;
+  }
+  .header {
+    column-gap: 12px;
+  }
+  .headerAction {
+    padding-inline: 12px;
+    font-size: 12px;
+  }
+  .subtitle {
+    font-size: 13px;
+    line-height: 1.65;
+  }
+}
+@container registry (max-width: 640px) {
+  .tableContainer {
+    display: none;
+  }
+  .compactList {
+    display: block;
+  }
+}
+@container registry (max-width: 380px) {
+  .actionShort {
+    display: none;
+  }
+  .headerAction {
+    width: 44px;
+    padding-inline: 0;
+  }
+  .registry {
+    gap: 18px;
+  }
+  .stat {
+    padding: 14px;
+  }
+  .stat > span:first-child {
+    font-size: 10px;
+  }
+  .stat svg {
+    width: 15px;
+  }
+  .pagination {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 14px 16px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .stat,
+  .card {
+    transition: none;
+  }
+}

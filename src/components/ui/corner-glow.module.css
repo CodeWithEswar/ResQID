@@ -1,0 +1,50 @@
+.cornerDots {
+  position: absolute;
+  z-index: 20;
+  width: clamp(220px, 28vw, 380px);
+  aspect-ratio: 1;
+  pointer-events: none;
+  background-image: radial-gradient(#a78bfa 1px, transparent 1px);
+  background-size: 18px 18px;
+  mask-image: radial-gradient(ellipse at center, #000 10%, transparent 70%);
+  opacity: 0.22;
+  animation: corner-glow 6s ease-in-out infinite;
+}
+
+.cornerDots::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, #8b5cf624, transparent 65%);
+}
+
+.topLeft {
+  top: -70px;
+  left: -70px;
+}
+
+.bottomRight {
+  right: -70px;
+  bottom: -70px;
+  animation-delay: -3s;
+}
+
+@keyframes corner-glow {
+  0%,
+  100% {
+    opacity: 0.1;
+    filter: drop-shadow(0 0 1px #8b5cf600);
+  }
+  50% {
+    opacity: 0.5;
+    filter: drop-shadow(0 0 5px #a78bfa80);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cornerDots {
+    animation: none;
+    opacity: 0.22;
+    filter: none;
+  }
+}
