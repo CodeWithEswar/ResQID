@@ -161,6 +161,7 @@ function BrowserCamera({
           </p>
         </div>
       )}
+      <ErrorMessage error={cameraError || live.error} />
       {!["connecting", "connected"].includes(status) && !starting ? (
         <div className={styles.dropZone} data-mode="live">
           <Artwork name="search/live" className={styles.uploadArtwork} />
@@ -184,7 +185,6 @@ function BrowserCamera({
         </div>
       ) : (
         <>
-          <ErrorMessage error={cameraError || live.error} />
           <div className={styles.cameraActions}>
             <button
               className="btn secondary"
@@ -314,7 +314,7 @@ export function FaceCapture({
       const form = new FormData();
       form.append("video", video);
       form.append("interval_seconds", "1");
-      form.append("max_frames", "30");
+      form.append("max_frames", "20");
       form.append("result_limit", "8");
       const response = await api<VideoFaceDetection>("/api/faces/video", {
         method: "POST",
